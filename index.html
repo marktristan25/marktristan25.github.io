@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Tristan's Portfolio</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media1.giphy.com/media/l0ExpTfF7WfGvrmRW/200.webp?cid=ecf05e47uvd9fdj4ll0c7a39q857b104ixu79pl1g8tt7opa&ep=v1_gifs_search&rid=200.webp&ct=g');
+            background-size: cover; /* This makes the image cover the entire background */
+            background-position: center;
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Project section */
+        .projects {
+            margin: 20px;
+        }
+
+        .projects h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .project-grid {
+            display: flex;               /* Use flexbox for the grid */
+            flex-wrap: wrap;              /* Allows wrapping to the next line */
+            justify-content: center;      /* Centers all items horizontally */
+            gap: 20px;                    /* Adds space between items */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-btn {
+            background-color: #000000;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            border: 2px solid transparent; /* Transparent border by default */
+            transition: background-color 0.3s ease, border 0.3s ease;
+            display: block;
+        }
+
+        .project-btn:hover {
+            background-color: #000000;
+            border-color: white; /* Only changes the border color */
+        }
+
+        /* footer {
+    background-color: #000000;
+    color: white; /* This will make the text inside the footer white */
+    /* padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+} */ *
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: white; /* Specifically makes the paragraph text white */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mark Tristan's Portfolio</h1>
+    </header>
+
+    <section class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <a href="#" class="project-btn">Project 1</a>
+            <a href="#" class="project-btn">Project 2</a>
+            <a href="#" class="project-btn">Project 3</a>
+            <a href="#" class="project-btn">Project 4</a>
+            <a href="#" class="project-btn">Project 5</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mark Tristan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
