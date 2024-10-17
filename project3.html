@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .banner {
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            /* Centers the content horizontally */
+            align-items: center;
+            /* Centers the content vertically */
+            flex-wrap: wrap;
+            /* Allows wrapping to the next line if necessary */
+            max-width: 100%;
+            /* Ensures it doesn't exceed the width of its container */
+            margin: 0 auto;
+            /* Centers the banner within its parent */
+        }
+
+
+        .nav-item .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .my-gallery-text {
+            color: white;
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        .custom-link {
+            color: rgb(0, 0, 0);
+        }
+
+        .title {
+            font-family: 'Garamond', serif;
+        }
+
+        .title h1 {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .pop-up {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: hidden;
+        }
+
+        .pop-up img {
+            max-width: 100%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .background-section {
+            background-image: url('project3 pictures/Untitled design.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-section h1,
+        .background-section p {
+            margin: 0;
+        }
+
+        .background-section h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .background-section p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .my-gallery-text {
+            font-size: 32px;
+        }
+    </style>
+</head>
+
+<body id="body" data-bs-theme="light">
+    <div class="banner d-flex justify-content-center align-items-center">
+        <span class="my-gallery-text ms-3">My Gallery</span>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="project3.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Lobby</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-outline-secondary container-fluid" onclick="changeMode()">☀️/🌑</button>
+            </li>
+        </ul>
+    </div>
+    <div class="background-section container-fluid">
+        <h1>Take a "pic" with a "clic"</h1>
+        <p>Take a blissful moment with documentations</p>
+    </div>
+
+    <div class="title text-center container-fluid mt-3">
+        <h1>Enjoy Every Moment</h1>
+    </div>
+    <div class="container mt-3">
+        <h1>Me Familia</h1>
+        <div id="cardContainer1" class="row"></div>
+
+        <h1>More Pics</h1>
+        <div id="cardContainer2" class="row"></div>
+
+        <h1>People</h1>
+        <div id="cardContainer3" class="row"></div>
+    </div>
+    <div class="container-fluid">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item2"><a href="#" class="nav-link2 px-2 text-body-secondary">Home</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© My Gallery, Inc</p>
+        </footer>
+    </div>
+    <div id="imagePopUp" class="pop-up" onclick="hidePopUp()">
+        <img id="popUpImage" src="" alt="Pop-up Image">
+    </div>
+
+
+    <script>
+        // First gallery
+        // var names1 = ["John", "Bill", "Steve","Bill", "Steve","Bill"];
+        var pics1 = ["project3 pictures/fam2.jpg", "project3 pictures/fam7.jpg", "project3 pictures/fam3.jpg", "project3 pictures/fam4.jpg", "project3 pictures/fam5.jpg", "project3 pictures/fam6.jpg", "project3 pictures/fam8.jpg", "project3 pictures/fam9.jpg", "project3 pictures/fam10.jpg", "project3 pictures/fam11.jpeg", "project3 pictures/fam13.jpg", "project3 pictures/fam14.jpg"];
+
+        var pics2 = ["project3 pictures/nature1.jpg", "project3 pictures/nature2.jpg", "project3 pictures/dog1.jpg", "project3 pictures/dog2.jpg", "project3 pictures/dog3.1.jpg", "project3 pictures/dog3.jpg", "project3 pictures/random1.jpg", "project3 pictures/random2.jpg", "project3 pictures/random3.jpeg", "project3 pictures/random4.jpg", "project3 pictures/random6.jpg", "project3 pictures/random7.jpg", "project3 pictures/random8.jpg", "project3 pictures/random9.jpg", "project3 pictures/random11.jpg", "project3 pictures/random13.jpg", "project3 pictures/random14.jpg", "project3 pictures/random15.jpg", "project3 pictures/random16.jpg", "project3 pictures/IMG_20211211_170959.jpg"];
+
+        // Third gallery
+        var pics3 = ["project3 pictures/people5.jpeg", "project3 pictures/people6.jpeg", "project3 pictures/people4.jpg", "project3 pictures/people2.jpeg", "project3 pictures/people1.jpeg", "project3 pictures/people7.jpg", "project3 pictures/people8.jpg", "project3 pictures/hehe4.jpg", "project3 pictures/people9.jpg", "project3 pictures/people10.jpg", "project3 pictures/hehe1.jpeg", "project3 pictures/hehe5.jpg", "project3 pictures/people11.jpg", "project3 pictures/people12.jpg", "project3 pictures/people13.jpg", "project3 pictures/people14.jpg"];
+
+        // Function to generate cards
+        // Function to generate cards
+        function generateGallery(containerId, pics) {
+            var myContainer = document.getElementById(containerId);
+            pics.forEach((pic) => {
+                myContainer.innerHTML += `
+        <div class="col-xl-3 col-md-4 col-sm-6 col-6">
+            <div class="card my-3" style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);" onclick="showPopUp('${pic}')">
+                <img src="${pic}" class="card-img-top" alt="Image" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0;">
+            </div>
+        </div>`;
+            });
+        }
+
+        // Pop-up functionality
+        function showPopUp(imageSrc) {
+            const popUp = document.getElementById('imagePopUp');
+            const popUpImage = document.getElementById('popUpImage');
+            popUpImage.src = imageSrc; // Set the image source for the pop-up
+            popUp.style.display = 'block'; // Show the pop-up
+        }
+
+        function hidePopUp() {
+            const popUp = document.getElementById('imagePopUp');
+            popUp.style.display = 'none'; // Hide the pop-up
+
+            if (event.target === popUp) {
+                popUp.style.display = 'none'; // Hide the pop-up
+            }
+        }
+        // Add event listener to the pop-up container to detect clicks
+        // document.getElementById('imagePopUp').addEventListener('click', hidePopUp);
+
+        // Generate galleries
+        generateGallery("cardContainer1", pics1);
+        generateGallery("cardContainer2", pics2);
+        generateGallery("cardContainer3", pics3);
+
+        var colorMode = "light";
+        function changeMode() {
+            var bodyElement = document.getElementById("body");
+            colorMode = colorMode == "dark" ? "light" : "dark";
+            bodyElement.setAttribute("data-bs-theme", colorMode);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>
