@@ -11,6 +11,62 @@ body {
     color: #333;
 }
 
+.header-flex {
+    display: flex;
+    /* Enable flexbox layout */
+    justify-content: space-between;
+    /* Space between left and right */
+    align-items: center;
+    /* Center items vertically */
+    padding: 0 20px;
+    /* Optional padding for spacing */
+}
+
+.header-flex h4,
+.header-flex h5 {
+    margin: 0;
+    /* Remove margin for better alignment */
+    white-space: nowrap;
+    /* Prevent text from wrapping on larger screens */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        /* Stack items vertically on small screens */
+        align-items: center;
+        /* Center items horizontally */
+        text-align: center;
+        /* Center text for better mobile display */
+    }
+
+    .header-flex h4,
+    .header-flex h5 {
+        white-space: normal;
+        /* Allow text to wrap on small screens */
+        margin: 5px 0;
+        /* Add margin for spacing */
+    }
+}
+
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .header-flex {
+        justify-content: center;
+        /* Center items on small screens */
+    }
+
+    .header-flex h4,
+    .header-flex h5 {
+        white-space: normal;
+        /* Allow text to wrap on small screens */
+        font-size: 2.5vw;
+        /* Adjust font size for smaller screens */
+    }
+}
+
 /* General Header Styles */
 header {
     background-color: #000;
