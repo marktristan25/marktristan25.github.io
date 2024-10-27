@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOGGO API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .imgcontainer {
+            height: 300px;
+        }
+
+        .imgcontainer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .dogname {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1.5' d='M1.75 8h12.5M1.75 4h12.5M1.75 12h12.5'/%3E%3C/svg%3E");
+        }
+
+        body {
+            background-image: url('/project4/pictures/dog 4.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            flex: 1;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-shadow-2 {
+            text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+
+        .nav-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand fw-bold fs-1 text-light" href="#">DOGGO</div>
+            <img src="/project4/pictures/PAW LOGO NEW.png" alt="Bootstrap" width="50" height="50">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex justify-content-end w-100 fw-bolder">
+                    <a class="nav-link active px-2" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active px-2" aria-current="page" href="https://dog.ceo/dog-api/"
+                        target="_blank">API</a>
+                    <a class="nav-link active px-2" aria-current="page" href="../index.html">Lobby</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-3">
+        <div class="fw-bold fs-1 text-shadow">WELCOME TO THE DOGGO WEBSITE</div>
+        <div class="text-shadow">
+            Where your search for adorable dog images begins! This user-friendly platform allows you to explore a wide
+            array of dog breeds by simply entering the breed name you're interested in. Within moments, you'll be
+            presented with beautiful pictures of the dogs you love, making it easy to discover new favorites and enjoy
+            the unique charm of each breed.
+
+            Our website is designed to provide a seamless experience for dog enthusiasts, pet owners, and anyone with a
+            passion for canines. With just a few clicks, you can access stunning visuals that showcase the diverse and
+            delightful world of dogs.
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="col-12">
+            <h1 class="fw-bold fs-1 text-shadow">SEARCH FOR DOGS</h1>
+        </div>
+        <div class="col-md-6 mx-auto">
+            <div class="input-group mt-3">
+                <input class="form-control" type="text" placeholder="Dog Breed" id="searchTerm">
+                <button class="btn btn-primary" type="button" onclick="searchDog()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cardContainer"></div>
+    <div class="container text-center mt-3 mb-3 text-shadow-2">
+        <strong>Please note:</strong> Results may vary as not all dog breeds are available in our database. Happy
+        searching!
+    </div>
+
+    <footer class="mt-auto">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+        </ul>
+        <p class="text-center text-light">© My API, 2024</p>
+    </footer>
+
+    <script>
+        var cardContainer = document.getElementById("cardContainer");
+
+        const loadDog = async (searchTerm) => {
+            const response = await fetch(`https://dog.ceo/api/breed/${searchTerm}/images/random`);
+            const dogData = await response.json(); // Extract JSON from the HTTP response
+
+            if (dogData.status === "success") {
+                cardContainer.innerHTML = `
+  <div class="col d-flex justify-content-center">
+    <div class="card my-3">
+      <div class="imgcontainer">
+        <img src="${dogData.message}" class="card-img-top" alt="A cute ${searchTerm}">
+      </div>
+      <div class="card-body">
+        <h5 class="dogname">${searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1)}</h5>
+        <a href="view.html?breed=${searchTerm}" class="btn btn-outline-primary mx-auto d-block">See more</a>
+      </div>
+    </div>
+  </div>`;
+
+            } else {
+                cardContainer.innerHTML = `<div class="col-12">
+            <div class="container text-center alert alert-danger mt-5" role="alert">
+                Dog breed not found!
+            </div>
+        </div>`;
+            }
+        }
+
+        function searchDog() {
+            var searchTerm = document.getElementById("searchTerm").value.toLowerCase();
+            loadDog(searchTerm);
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
