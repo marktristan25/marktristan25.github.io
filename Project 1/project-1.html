@@ -6,105 +6,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Apple MacBook Pro 16 Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="project-1-style.css">
+    <style>
+        .features h3 {
+            font-size: 1.25rem;
+        }
+
+        .features p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .features img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .features .row {
+            gap: 1rem;
+            margin: 0;
+        }
+
+        /* On larger screens, make images even smaller */
+        @media (min-width: 992px) {
+            .features img {
+                max-width: 50%;
+                /* Smaller size for large screens */
+            }
+        }
+
+        .hero img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .description-box h2 {
+            font-size: 2rem;
+        }
+
+        .description-box p {
+            font-size: 1.125rem;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .navbar-nav .nav-item .nav-link.active,
+        .navbar-nav .nav-item .nav-link:hover {
+            color: white !important;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header Section -->
-    <header>
-        <h1>Apple MacBook Pro 16</h1>
-        <div class="header-flex">
-            <h4>Innovation at Its Best</h4>
-            <h5>Empowering Creativity</h5>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000;">
+        <div class="container">
+            <a class="navbar-brand" href="#">Apple MacBook Pro 16</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <p>The most powerful MacBook ever.</p>
-    </header>
-    
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
 
 
     <!-- Image Section -->
-    <section class="hero">
+    <section class="hero py-5 text-center">
         <div class="container">
-            <img src="project 1 pictures/laptop good.png" alt="MacBook Pro 16" class="hero-img">
-        </div>
-        <div class="description-box">
-            <h2>MacBook Pro 16<br>
-                Unmatched Power, Unrivaled Creativity
-            </h2>
-            <p>
-                Meet the MacBook Pro 16 – your ultimate creative powerhouse, designed for both the studio and on the go.
-                Its Liquid Retina XDR display offers incredible brightness and color accuracy for stunning visuals,
-                while a variety of Thunderbolt 4 ports provide seamless connectivity for all your devices.
-                This MacBook is powered by the M2 Pro or M2 Max chip, delivering unparalleled performance
-                with up to 12 CPU cores and 38 GPU cores, enabling you to tackle even the most demanding tasks.
-                Additionally, it features up to 96GB of unified memory and up to 8TB of super-fast SSD storage,
-                ensuring that you have all the space and speed you need for your creative projects.
-                With exceptional battery life, a robust cooling system, and advanced features like ProMotion technology,
-                the MacBook Pro 16 redefines what’s possible in a portable workstation.
-            </p>
-        </div>
-        <div class="gallery col-4 col-md-4 col-sm-4">
-            <img src="project 1 pictures/front view laptop.png" alt="Gallery Image 1" class="gallery-img">
-            <img src="project 1 pictures/top view laptop.png" alt="Gallery Image 2" class="gallery-img">
-            <img src="project 1 pictures/side view laptop.png" alt="Gallery Image 3" class="gallery-img">
-            <!-- Add more images as needed -->
-        </div>
+            <img src="project 1 pictures/laptop good.png" alt="MacBook Pro 16" class="img-fluid mb-4">
+            <div class="description-box mx-auto text-center">
+                <h2 class="display-5">MacBook Pro 16<br>Unmatched Power, Unrivaled Creativity</h2>
+                <p class="lead">
+                    Meet the MacBook Pro 16 – your ultimate creative powerhouse, designed for both the studio and on the
+                    go.
+                    Its Liquid Retina XDR display offers incredible brightness and color accuracy for stunning visuals,
+                    while a variety of Thunderbolt 4 ports provide seamless connectivity for all your devices.
+                    This MacBook is powered by the M2 Pro or M2 Max chip, delivering unparalleled performance
+                    with up to 12 CPU cores and 38 GPU cores, enabling you to tackle even the most demanding tasks.
+                    Additionally, it features up to 96GB of unified memory and up to 8TB of super-fast SSD storage,
+                    ensuring that you have all the space and speed you need for your creative projects.
+                    With exceptional battery life, a robust cooling system, and advanced features like ProMotion
+                    technology,
+                    the MacBook Pro 16 redefines what’s possible in a portable workstation.
+                </p>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4">
+                <div class="col">
+                    <img src="project 1 pictures/front view laptop.png" alt="Gallery Image 1" class="img-fluid"
+                        style="max-width: 80%;">
+                </div>
+                <div class="col">
+                    <img src="project 1 pictures/top view laptop.png" alt="Gallery Image 2" class="img-fluid"
+                        style="max-width: 80%;">
+                </div>
+                <div class="col">
+                    <img src="project 1 pictures/side view laptop.png" alt="Gallery Image 3" class="img-fluid"
+                        style="max-width: 80%;">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Key Features Section -->
-    <section class="features">
-        <div class="key">
-            <h2>KEY FEATURES</h2>
-        </div>
-        <div class="pros">
-            <h3>Processor: Apple M3 Pro/Max chip.<br></h3>
-            <p>The Apple M3 Pro and M3 Max chips are powerful processors designed for high performance and
-                efficiency.<br>
-                They enable the MacBook Pro to handle demanding tasks like video editing and 3D rendering with ease.</p>
+    <section class="features text-white py-5 text-center" style="background-color: #000;">
+        <h2 class="display-4 mb-4">KEY FEATURES</h2>
+        <div class="row g-5">
+            <div class="col-12">
+                <h3>Processor: Apple M3 Pro/Max chip</h3>
+                <p>The Apple M3 Pro and M3 Max chips are powerful processors designed for high performance and
+                    efficiency. They enable the MacBook Pro to handle demanding tasks like video editing and 3D
+                    rendering with ease.</p>
+                <img src="project 1 pictures/prospros.png" alt="MacBook Pro 16" class="img-fluid mb-4">
+            </div>
 
-            <img src="project 1 pictures/prospros.png" alt="MacBook Pro 16" class="pros-img">
-        </div>
+            <div class="col-12">
+                <h3>Display: 16-inch Liquid Retina XDR display</h3>
+                <p>A high-resolution screen that provides vibrant colors and sharp images, making everything look
+                    stunning,
+                    from movies to design work.</p>
+                <img src="project 1 pictures/display crop.png" alt="MacBook Pro 16" class="img-fluid mb-4">
+            </div>
 
-        <div class="dis"></div>
-        <h3>Display: 16-inch Liquid Retina XDR display.<br></h3>
-        <p>A high-resolution screen that provides vibrant colors and sharp images, making everything look stunning,<br>
-            from movies to design work.</p>
+            <div class="col-12">
+                <h3>Battery Life: Up to 22 hours</h3>
+                <p>The MacBook can last for an entire day on a single charge, allowing you to work or play without
+                    worrying about finding a power outlet.</p>
+                <img src="project 1 pictures/up vieww laptop.png" alt="MacBook Pro 16" class="img-fluid mb-4">
+            </div>
 
-        <img src="project 1 pictures/display crop.png" alt="MacBook Pro 16" class="display-img">
-        </div>
+            <div class="col-12">
+                <h3>Memory and Storage: Up to 128GB unified memory and up to 8TB SSD storage</h3>
+                <p>This allows for exceptional performance and ample space to store your projects, ensuring you can
+                    handle even the most demanding applications without any slowdown.</p>
+                <img src="project 1 pictures/memoryyyy.png" alt="MacBook Pro 16" class="img-fluid mb-4">
+            </div>
 
-        <div class="batt"></div>
-        <h3>Battery Life: Up to 22 hours.<br></h3>
-        <p>The MacBook can last for an entire day on a single charge, allowing you to work or play without<br>
-            worrying about finding a power outlet.</p>
-
-        <img src="project 1 pictures/up vieww laptop.png" alt="MacBook Pro 16" class="batt-img">
-        </div>
-
-        <div class="mem"></div>
-        <h3>Memory and Storage: Up to 128GB unified memory and up to 8TB SSD storage.<br></h3>
-        <p>This allows for exceptional performance and ample space to store your projects, ensuring you can handle even
-            the<br>
-            most demanding applications without any slowdown.</p>
-
-        <img src="project 1 pictures/memoryyyy.png" alt="MacBook Pro 16" class="mem-img">
-        </div>
-
-        <div class="grap"></div>
-        <h3>Graphics: 16-core GPU, 19-core GPU, or 38-core GPU options.<br></h3>
-        <p>These options refer to the number of processing cores dedicated to graphics. More cores mean better
-            performance<br>
-            in tasks like gaming, video editing, and graphic design.</p>
-
-        <img src="project 1 pictures/graphics laptop.png" alt="MacBook Pro 16" class="grap-img">
+            <div class="col-12">
+                <h3>Graphics: 16-core GPU, 19-core GPU, or 38-core GPU options</h3>
+                <p>These options refer to the number of processing cores dedicated to graphics. More cores mean better
+                    performance
+                    in tasks like gaming, video editing, and graphic design.</p>
+                <img src="project 1 pictures/graphics laptop.png" alt="MacBook Pro 16" class="img-fluid mb-4">
+            </div>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer>
+    <footer class="text-white py-4 text-center" style="background-color: #000;">
         <p>&copy; 2024 Apple Inc. All rights reserved.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
