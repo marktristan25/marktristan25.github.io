@@ -90,39 +90,37 @@ if (isset($_GET['page'])) {
 
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="background-color:rgb(255, 255, 255);">
-        <div class="container">
-            <a class="navbar-brand fw-bold" style="color: #F57C00">EVERYWHERE FITNESS</a>
+<nav class="navbar navbar-expand-lg" style="background-color:rgb(255, 255, 255);">
+    <div class="container">
+        <a class="navbar-brand fw-bold" style="color: #F57C00">EVERYWHERE FITNESS</a>
 
-            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
-                <div class="d-flex justify-content-lg-end w-100 align-items-center">
-                    <ul class="navbar-nav flex-lg-row text-center mx-auto">
-                        <li class="nav-item">
-                            <a href="?page=home" type="button" class="btn1 px-5 text-dark fw-bolder">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="?page=trainers" type="button" class="btn1 px-5 text-dark fw-bolder">Trainers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="?page=highLights" type="button"
-                                class="btn1 px-5 text-dark fw-bolder">Highlights</a>
-                        </li>
-                    </ul>
+        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <div class="ms-lg-3 mt-3 me-5 mt-lg-0">
-                        <button type="button" class="btn me-3 text-white border-0 rounded-0"
-                            style="background-color: #F57C00">Sign In</button>
-                        <button type="button" class="btn text-white border-0 rounded-0"
-                            style="background-color: #F57C00">Try for free</button>
-                    </div>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <a href="?page=home" class="btn1 px-4 text-dark fw-bolder nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="?page=trainers" class="btn1 px-4 text-dark fw-bolder nav-link">Trainers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="?page=highLights" class="btn1 px-4 text-dark fw-bolder nav-link">Highlights</a>
+                </li>
+            </ul>
+
+            <div class="d-flex flex-column flex-lg-row align-items-center justify-content-end gap-2 mt-3 mt-lg-0">
+                <button type="button" class="btn text-white border-0 rounded-0 px-4"
+                    style="background-color: #F57C00">Sign In</button>
+                <button type="button" class="btn text-white border-0 rounded-0 px-4"
+                    style="background-color: #F57C00">Try for free</button>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
 
     <?php include("shared/". $page . ".php"); ?>
