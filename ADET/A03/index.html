@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adventure Time</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo.png">
+</head>
+
+<style>
+    .card {
+        height: 200px;
+        overflow: hidden;
+        border-radius: 1rem;
+        /* or your rounded-5 */
+        position: relative;
+    }
+
+    .card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover img {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+
+    body {
+        background-color: #f2dad6;
+        height: auto;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg mb-2" style="background-color:#000000;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" style="color: #f2dad6"></a>
+            <img src="img/logo.png" alt="Bootstrap" width="150" height="50">
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item">
+                        <a href="index.html" class="btn1 px-4 text-white fw-bolder nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="characters.html" class="btn1 px-4 text-white fw-bolder nav-link">Characters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="btn1 px-4 text-white fw-bolder nav-link">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div style="height: 600px">
+
+            <div class="row">
+                <div class="col-md-6 mb-md-2 col-12 mb-2">
+                    <div class="card rounded-5">
+                        <img src="img/banner.jpg" class="card-img-top h-100 w-100 rounded-5" style="object-fit: cover;"
+                            alt="...">
+                    </div>
+                </div>
+
+                <div class="col-md-3  mb-md-2 col-6  mb-2">
+                    <div class="card rounded-5">
+                        <img src="img/flying.webp" class="card-img-top h-100 w-100 rounded-5" style="object-fit: cover;"
+                            alt="...">
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-md-2 col-6  mb-2">
+                    <div class="card rounded-5">
+                        <img src="img/bmoo.jpg" class="card-img-top h-100 w-100 rounded-5" style="object-fit: cover;"
+                            alt="...">
+                    </div>
+                </div>
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------------------- -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-md-2 col-12 mb-2">
+                            <div class="card rounded-5">
+                                <img src="img/candyPeople.jpg" class="card-img-top h-100 w-100 rounded-5"
+                                    style="object-fit: cover;" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-6  mb-md-2 col-12 mb-2">
+                            <div class="card rounded-5">
+                                <img src="img/surprised.webp" class="card-img-top h-100 w-100 rounded-5"
+                                    style="object-fit: cover;" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-md-2 col-6 mb-2">
+                            <div class="card rounded-5">
+                                <img src="img/friends.webp" class="card-img-top h-100 w-100 rounded-5"
+                                    style="object-fit: cover;" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-md-2 col-6 mb-2">
+                            <div class="card rounded-5">
+                                <img src="img/candyKingdom.webp" class="card-img-top h-100 w-100 rounded-5"
+                                    style="object-fit: cover;" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------------------------------------------------------------------------------------------------------- -->
+                <div class="col-md-6">
+                    <div class="col-md-12 mb-md-2 col-12 mb-2">
+                        <div class="card rounded-5" style="height: 614px;">
+                            <img src="img/mid.jpg" class="card-img-top h-100 w-100 rounded-5" style="object-fit: cover;"
+                                alt="...">
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------------------------------------------------------------------------------------------------------- -->
+                <div class="col-md-2">
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <div class="card rounded-5">
+                                <img src="img/snail.webp" class="card-img-top h-100 w-100 rounded-5"
+                                    style="object-fit: cover;" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card rounded-5" style="height: 414px;">
+                                <img src="img/last.jpg" class="card-img-top h-100 w-100 rounded-5"
+                                    style="object-fit: cover;" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
