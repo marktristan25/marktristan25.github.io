@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        .custom-button {
+            width: 100px;
+        }
+
+        .custom-button.content {
+            width: 200px;
+        }
+
+        .custom-button:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        .topcontainer {
+            height: 15dvh;
+        }
+
+        .categories {
+            width: fit-content;
+        }
+
+        .maincontainer {
+            height: 68dvh;
+        }
+
+        .custom-button.active {
+            background-color: #ffffff;
+            border: 2px solid #cbc47f;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid text-center p-3 fw-bolder" style="background-color: #cbc47f; ">
+        LUXURY BAGS
+    </div>
+
+    <div class="container-fluid">
+        <div class="row pt-3">
+            <div class="col-12 col-md-9">
+                <div class="row">
+                    <div class="col pb-3">
+                        <div class="card overflow-scroll p-3 topcontainer">
+                            <div class="d-flex flex-start flex-row categories my-auto" id="categories">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card overflow-scroll p-3 maincontainer">
+                            <div class="d-flex flex-start flex-row flex-wrap justify-content-center" id="maincontainer">
+                            </div>
+                        </div>
+                        <div class="text-end mt-3">
+                            <button onclick="addSelectedToCart()" class="btn" style="background-color: #cbc47f;">Add to
+                                Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-12 mt-3 mt-md-0">
+                <div class="card p-3 overflow-scroll" style="height: 100%;">
+                    <div id="receipt">
+
+                    </div>
+                    <div class="mt-4 d-flex flex-row justify-content-between">
+                        <div><b>TOTAL</b></div>
+                        <div><b id="totalValue">0</b></div>
+                    </div>
+                    <div class="mt-3 d-flex justify-content-end">
+                        <button onclick="clearCart()" class="btn" style="background-color:#cbc47f;">Clear Cart</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var products = [
+            {
+                "category": "Tumi",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Junior Crossbody",
+                        "img": "bags/tumi1.jpg",
+                        "price": 25990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Voyageur",
+                        "img": "bags/tumi2.jpg",
+                        "price": 31990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Alpha Bravo",
+                        "img": "bags/tumi3.jpg",
+                        "price": 15990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Tumi Harrison",
+                        "img": "bags/tumi4.jpg",
+                        "price": 23990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Voyageur",
+                        "img": "bags/tumi5.jpg",
+                        "price": 23990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Tumi Alpha Sling",
+                        "img": "bags/tumi6.jpg",
+                        "price": 19990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Voyageur Crossbody",
+                        "img": "bags/tumi7.jpg",
+                        "price": 33990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Tumi Alpha Portfolio",
+                        "img": "bags/tumi8.jpg",
+                        "price": 11990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Voyageur Tote",
+                        "img": "bags/tumi9.jpg",
+                        "price": 30990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Voyageur Tote",
+                        "img": "bags/tumi10.jpg",
+                        "price": 37990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Alpha Bravo Sling Backpack",
+                        "img": "bags/tumi11.jpg",
+                        "price": 23990
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Alpha Bravo Academy Brief",
+                        "img": "bags/tumi12.jpg",
+                        "price": 37990
+                    }
+                ]
+            },
+            {
+                "category": "Bellroy",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Venture Ready Sling",
+                        "img": "bags/bellroy1.avif",
+                        "price": 4432
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Lite Travel Pack",
+                        "img": "bags/bellroy2.avif",
+                        "price": 8876
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Transit Workpack",
+                        "img": "bags/bellroy3.avif",
+                        "price": 3779
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Lite Belt Bag",
+                        "img": "bags/bellroy4.avif",
+                        "price": 9887
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Venture Sling 6L",
+                        "img": "bags/bellroy5.avif",
+                        "price": 7886
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Tokyo Work Bag",
+                        "img": "bags/bellroy6.avif",
+                        "price": 3442
+                    }
+                ]
+            },
+            {
+                "category": "Herschel",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Hershell Heritage",
+                        "img": "bags/h1.webp",
+                        "price": 4876
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Hershell Classic",
+                        "img": "bags/h2.webp",
+                        "price": 3256
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Pop Quiz Backpack",
+                        "img": "bags/h3.webp",
+                        "price": 4889
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Hershell Retreat",
+                        "img": "bags/h4.webp",
+                        "price": 6754
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Hershell Lite America",
+                        "img": "bags/h5.webp",
+                        "price": 8634
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Hershell Heritage 24L",
+                        "img": "bags/h6.webp",
+                        "price": 4977
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Hershell Heritage 26L",
+                        "img": "bags/h7.webp",
+                        "price": 4532
+                    }
+                ]
+            },
+            {
+                "category": "Samsonite",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Mobile Solution Eco",
+                        "img": "bags/samsonite1.jpg",
+                        "price": 10250
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "MK X SAMSONITE",
+                        "img": "bags/samsonite2.jpg",
+                        "price": 26550
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Karissas 2",
+                        "img": "bags/samsonite3.jpg",
+                        "price": 4220
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Urban Packer",
+                        "img": "bags/samsonite4.jpg",
+                        "price": 18840
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Devlinea",
+                        "img": "bags/samsonite5.jpg",
+                        "price": 14407
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Markston",
+                        "img": "bags/samsonite6.jpg",
+                        "price": 10582
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Haaper",
+                        "img": "bags/samsonite7.jpg",
+                        "price": 12707
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Locus Eco",
+                        "img": "bags/samsonite8.jpg",
+                        "price": 11950
+                    }
+                ]
+            },
+            {
+                "category": "Nomatic",
+                "contents": [
+                    {
+                        "isAvailable": true,
+                        "name": "Travel Pack",
+                        "img": "bags/nomatic1.webp",
+                        "price": 15798
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Travel Bag 30L",
+                        "img": "bags/nomatic2.webp",
+                        "price": 15798
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Travel Bag 40L",
+                        "img": "bags/nomatic3.webp",
+                        "price": 16363
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Backpack",
+                        "img": "bags/nomatic4.webp",
+                        "price": 14670
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Laptop Bag",
+                        "img": "bags/nomatic5.webp",
+                        "price": 9592
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Messenger Bag",
+                        "img": "bags/nomatic6.webp",
+                        "price": 14670
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "Tech Caser",
+                        "img": "bags/nomatic7.webp",
+                        "price": 5642
+                    }
+                ]
+            }
+        ]
+
+        var total = 0;
+
+        let selectedProduct = null;
+
+        function selectProduct(price, name) {
+            selectedProduct = { price: parseFloat(price), name: name };
+        }
+
+        function addSelectedToCart() {
+            addToReceipt(selectedProduct.price, selectedProduct.name);
+        }
+
+        function clearCart() {
+            document.getElementById("receipt").innerHTML = "";
+
+            total = 0;
+            document.getElementById("totalValue").innerHTML = total;
+        }
+        function buttonHighlight(clickedButton) {
+            const allButtons = document.querySelectorAll("#categories .custom-button");
+            allButtons.forEach(btn => btn.classList.remove("active"));
+            clickedButton.classList.add("active");
+        }
+
+        function buttonHighlightContents(clickedButton) {
+            const allButtons = document.querySelectorAll("#maincontainer .custom-button");
+            allButtons.forEach(btn => btn.classList.remove("active"));
+            clickedButton.classList.add("active");
+        }
+
+        function loadCategories() {
+            var categoriesContainer = document.getElementById("categories");
+
+            products.forEach((product, index) => {
+                categoriesContainer.innerHTML += `
+          <div onclick="buttonHighlight(this); loadProducts('`+ index + `')" class="card mx-1 custom-button p-3 text-center">
+            <small>`+ product.category + `</small>
+          </div>
+        `;
+            });
+            document.querySelectorAll("#categories .custom-button")[0].click();
+        }
+
+        function loadProducts(categoryIndex) {
+            var maincontainer = document.getElementById("maincontainer");
+            maincontainer.innerHTML = "";
+
+            products[categoryIndex].contents.forEach(content => {
+                maincontainer.innerHTML += `
+               <div onclick="buttonHighlightContents(this); selectProduct('`+ content.price + `','` + content.name + `')" class="card mx-1 my-2 custom-button content p-3 text-center">
+                 <img src=`+ content.img + ` class="card-img-top" style = "height: 200px:" alt="...">
+              <small>`+ content.name + `</small>
+              <div>₱ ` + content.price + `</div>
+            </div> 
+          `;
+            });
+        }
+
+        function addToReceipt(price, name) {
+            var receiptContainer = document.getElementById("receipt");
+            total += parseFloat(price);
+            document.getElementById("totalValue").innerHTML = total;
+
+            var item = document.createElement("div");
+            item.className = "d-flex flex-row justify-content-between my-2";
+
+            item.innerHTML = `
+        <div><small>${name}</small></div>
+        <div>
+            <small>₱ ${price}</small>
+            <button class="btn ms-2" style="background-color: #cbc47f;">Remove</button>
+        </div>
+    `;
+
+            item.querySelector("button").onclick = function () {
+                total -= parseFloat(price);
+                document.getElementById("totalValue").innerHTML = total;
+                item.remove();
+            };
+
+            receiptContainer.appendChild(item);
+        }
+
+
+        loadCategories();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
