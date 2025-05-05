@@ -79,7 +79,7 @@
                     <div id="receipt">
 
                     </div>
-                    <div class="mt-4 d-flex flex-row justify-content-between">
+                    <div class="mt-4 mb-4 d-flex flex-row justify-content-between">
                         <div><b>TOTAL</b></div>
                         <div><b id="totalValue">0</b></div>
                     </div>
@@ -396,7 +396,7 @@
 
             products.forEach((product, index) => {
                 categoriesContainer.innerHTML += `
-          <div onclick="buttonHighlight(this); loadProducts('`+ index + `')" class="card mx-1 custom-button p-3 text-center">
+          <div onclick="buttonHighlight(this); loadProducts('`+ index + `')" class="card mx-1 custom-button p-2 text-center">
             <small>`+ product.category + `</small>
           </div>
         `;
