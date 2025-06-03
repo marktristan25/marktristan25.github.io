@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OPM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo.png">
+</head>
+
+<style>
+    .videoBg video {
+        object-fit: cover;
+        filter: brightness(30%);
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .rotate-img {
+        animation: rotate 5s linear infinite;
+    }
+</style>
+
+
+<body data-bs-theme = "dark">
+    <div class="videoBg">
+        <video autoplay muted loop>
+            <source src="assets/bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="container-fluid" style="background-color: transparent;">
+        <div class="container">
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <div class="fw-bolder fs-3 text-light">OPM SONGS</div>
+                <div class="d-flex flex-row gap-5 text-light">
+                    <div class="fw-medium fs-5">Home</div>
+                    <div class="fw-medium fs-5">Songs</div>
+                    <div class="fw-medium fs-5">About</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="height: 100vh">
+        <div class="row h-100">
+            <div class="col-12 col-sm-6 d-flex flex-column justify-content-center text-start text-light">
+                <div class="fw-bolder fs-1">Original Pilipino Music</div>
+                <div class="fw-light fst-italic">
+                    Original Pilipino Music (OPM) is music created by Filipino artists. It reflects the heart, culture,
+                    and everyday stories of the Filipino people. <br />
+                    From love songs to upbeat tunes, OPM connects people through songs that are truly Filipino.
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 d-flex align-items-center justify-content-center">
+                <img src="assets/disk.png" class="rotate-img img-fluid" alt="Disk Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="fw-medium text-center fs-1">DISCOVER POPULAR OPM SONGS!</div>
+    <iframe></iframe>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
