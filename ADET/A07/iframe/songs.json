@@ -1,73 +1,70 @@
 {
-    "songs": [
-        {
-            "title": "Multo",
-            "name": "Cup Of Joe",
-            "image": "cup-of-joe.jpg",
-            "audio": "Multo - Cup of Joe (Official Music Video).mp3"
-        },
-
-        {
-          "title": "Tibok",
-            "name": "Over October",
-            "image": "ikot.jpg",
-            "audio": "ikot.mp3"  
-        },
-
-        {
-          "title": "Mundo",
-            "name": "IV of Spades",
-            "image": "mundo.jpg",
-            "audio": "mundo.mp3"  
-        },
-
-        {
-          "title": "Dilaw",
-            "name": "Maki",
-            "image": "dilaw.jpg",
-            "audio": "dilaw.mp3"  
-        },
-
-        {
-          "title": "Araw-Araw",
-            "name": "Ben&Ben",
-            "image": "araw araw.jpg",
-            "audio": "araw araw.mp3"  
-        },
-
-        {
-          "title": "Buwan",
-            "name": "Juan Karlos",
-            "image": "buwan.jpg",
-            "audio": "buwan.mp3"  
-        },
-
-        {
-          "title": "Huwag Na Huwag Mong Sasabihin",
-            "name": "Kitchie Nadal",
-            "image": "huwag na huwag.jpg",
-            "audio": "huwag na huwag.mp3"  
-        },
-
-        {
-          "title": "Sundo",
-            "name": "Imago",
-            "image": "sundo.jpg",
-            "audio": "sundo.mp3"  
-        },
-
-        {
-          "title": "Miss Miss",
-            "name": "Rob Daniel",
-            "image": "miss miss.jpg",
-            "audio": "miss miss.mp3"  
-        },
-
-        {
-          "title": "Pasilyo",
-            "name": "SunKissed Lola",
-            "image": "pasilyo.png",
-            "audio": "pasilyo.mp3"  
-        }
-    ]
+  "songs": [
+    {
+      "title": "Multo",
+      "name": "Cup Of Joe",
+      "image": "cup-of-joe.jpg",
+      "audio": "multo.mp3"
+    },
+    {
+      "title": "Tibok",
+      "name": "Over October",
+      "image": "ikot.jpg",
+      "audio": "ikot.mp3"
+    },
+    {
+      "title": "You'll Be Safe Here",
+      "name": "Rico Blanco",
+      "image": "youll be safe here.jpg",
+      "audio": "youll be safe here.mp3"
+    },
+    {
+      "title": "Mundo",
+      "name": "IV of Spades",
+      "image": "mundo.jpg",
+      "audio": "mundo.mp3"
+    },
+    {
+      "title": "Dilaw",
+      "name": "Maki",
+      "image": "dilaw.jpg",
+      "audio": "dilaw.mp3"
+    },
+    {
+      "title": "Araw-Araw",
+      "name": "Ben&Ben",
+      "image": "araw araw.jpg",
+      "audio": "araw araw.mp3"
+    },
+    {
+      "title": "Buwan",
+      "name": "Juan Karlos",
+      "image": "buwan.jpg",
+      "audio": "buwan.mp3"
+    },
+    {
+      "title": "Huwag Na Huwag Mong Sasabihin",
+      "name": "Kitchie Nadal",
+      "image": "huwag na huwag.jpg",
+      "audio": "huwag na huwag.mp3"
+    },
+    {
+      "title": "Sundo",
+      "name": "Imago",
+      "image": "sundo.jpg",
+      "audio": "sundo.mp3"
+    },
+    {
+      "title": "Miss Miss",
+      "name": "Rob Daniel",
+      "image": "miss miss.jpg",
+      "audio": "miss miss.mp3"
+    },
+    {
+      "title": "Pasilyo",
+      "name": "SunKissed Lola",
+      "image": "pasilyo.png",
+      "audio": "pasilyo.mp3"
+    }
+  ]
 }

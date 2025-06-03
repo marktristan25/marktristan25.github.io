@@ -54,22 +54,29 @@
         </video>
     </div>
 
-    <div class="container-fluid" style="background-color: transparent;">
+    <nav class="navbar navbar-expand-lg bg-transparent" id="home">
         <div class="container">
-            <div class="d-flex flex-row justify-content-between align-items-center">
-                <div class="fw-bolder fs-3 text-light">OPM SONGS</div>
-                <div class="d-flex flex-row gap-5 text-light">
-                    <div class="fw-medium fs-5">Home</div>
-                    <div class="fw-medium fs-5">Songs</div>
-                    <div class="fw-medium fs-5">About</div>
+            <a class="navbar-brand fw-bolder fs-3 text-light" href="#">OPM SONGS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto d-flex flex-column flex-lg-row gap-4">
+                    <a href="#home" class="fw-medium fs-5 text-decoration-none text-light">Home</a>
+                    <a href="#songs" class="fw-medium fs-5 text-decoration-none text-light">Songs</a>
+                    <a href="#history" class="fw-medium fs-5 text-decoration-none text-light">History</a>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
+
 
     <div class="container" style="height: 100vh">
         <div class="row h-100">
-            <div class="col-12 col-sm-6 d-flex flex-column justify-content-center text-start text-light mb-0">
+            <div
+                class="col-12 col-sm-6 d-flex flex-column justify-content-center text-md-start text-center text-light mb-0">
                 <div class="fw-bolder fs-1">Original Pilipino Music</div>
                 <div class="fw-light fst-italic">
                     Original Pilipino Music (OPM) is music created by Filipino artists. It reflects the heart, culture,
@@ -79,17 +86,49 @@
             </div>
 
             <div class="col-12 col-sm-6 d-flex align-items-center justify-content-center mt-0">
-                <img src="assets/disk.png" style="width: auto;" class="rotate-img img-fluid" alt="Disk Image">
+                <img src="assets/disk.png" style="max-width: 80%;" class="rotate-img img-fluid" alt="Disk Image">
             </div>
         </div>
     </div>
 
-    <div class="fw-medium text-center fs-1">DISCOVER POPULAR OPM SONGS!</div>
+    <div class="fw-medium text-center fs-1" id="songs">DISCOVER POPULAR OPM SONGS!</div>
     <div class="container">
         <div class="d-flex justify-content-center">
             <iframe src="../iframe/index.html" width="80%" height="300" style="border: none;"></iframe>
         </div>
     </div>
+
+    <div class="container py-5" id="history">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-light">History of OPM</h2>
+            <p class="text-light fst-italic">Explore how Filipino music has evolved over the years.</p>
+        </div>
+
+        <div class="row text-light">
+            <div class="col-md-6 mb-4">
+                <h4 class="fw-semibold">1940s–1960s: The Early Influences</h4>
+                <p>Filipino music during this time was heavily influenced by American jazz, swing, and kundiman. Local
+                    artists began blending Western sounds with Filipino themes and language.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4 class="fw-semibold">1970s: The Birth of OPM</h4>
+                <p>The term "Original Pilipino Music" or OPM emerged in the 1970s as artists like Freddie Aguilar and
+                    Hotdog started creating original songs in Filipino languages. This era marked the rise of Manila
+                    Sound.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4 class="fw-semibold">1980s–1990s: OPM Boom</h4>
+                <p>OPM gained massive popularity with bands and solo artists dominating radio and television. The music
+                    tackled themes of love, patriotism, and social issues, making it relatable to the masses.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4 class="fw-semibold">2000s–Present: Revival and Innovation</h4>
+                <p>Modern OPM artists fuse pop, R&B, hip-hop, indie, and electronic styles. Acts like Ben&Ben, Moira
+                    Dela Torre, and SB19 represent the genre's evolution and global reach.</p>
+            </div>
+        </div>
+    </div>
+
 
 
 
